@@ -70,4 +70,15 @@ console.log(m2a);
 
 //possibly above can be redone with a .map and/or .filter
 
+const form = document.querySelector("form");
 
+form.addEventListener("submit", (e) => {
+    e.preventDefault()
+    console.log("form submitted")
+    const userInput = document.querySelector("#input")
+    const userText = userInput.value.toUpperCase()
+    console.log(userText)
+});
+
+//just thinking that with the userinput may need to reword to something like:
+//  const userText = toUpperCase.userInput.value
