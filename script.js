@@ -39,34 +39,11 @@ const alphamorse =
 // console.log(Object.keys(alphamorse))
 
 const myMorse = Object.values(alphamorse)
-// console.log(Object.values(alphamorse))
 
-// now I need one value to call the other - for(let someval in array) { let }
-
-function getAlphFromMorse(object, value) {
-    
-    return Object.keys(object).find(key => 
-        object[key] === value);
-}
-
-const a2m = getAlphFromMorse(alphamorse, "--..");
-console.log(a2m);
+import { getAlphFromMorse } from "./utils.js";
+import { getMorseFromAlpha } from "./utils.js";
 
 
-
-function getMorseFromAlpha(object, key) {
-    
-    for (let i =0; i< Object.values(object).length; i++)
-    {
-        if(Object.keys(object)[i] === key)
-        {
-            return Object.values(object)[i];
-        }
-    }
-}
-
-const m2a = getMorseFromAlpha(alphamorse, "Q");
-console.log(m2a);
 
 //possibly above can be redone with a .map and/or .filter
 
@@ -78,7 +55,10 @@ form.addEventListener("submit", (e) => {
     const userInput = document.querySelector("#input")
     const userText = userInput.value.toUpperCase()
     console.log(userText)
+    const a2m = getAlphFromMorse(alphamorse, userText)
+    const m2a = getMorseFromAlpha(alphamorse, userText);
+    console.log(m2a, a2m, "is the translation")
+
 });
 
-//just thinking that with the userinput may need to reword to something like:
-//  const userText = toUpperCase.userInput.value
+//currently this works for single character inputs only 
