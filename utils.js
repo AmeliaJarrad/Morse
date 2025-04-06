@@ -27,11 +27,17 @@ const alphamorse =
     "Z": "--.."
 }
 
+// import { IsANumError } from "./errors.js";
 
 export function getAlphFromMorse(object, value) {
+
+    // if (value === !isNaN) {
+    //     throw new IsANumError("Can't do numbers");
+    // }
     
     return Object.keys(object).find(key => 
         object[key] === value);
+
 }
 
 // const a2m = getAlphFromMorse(alphamorse, "--..");
@@ -53,11 +59,7 @@ export function getMorseFromAlpha(object, key) {
 
 
 
+
 // const m2a = getMorseFromAlpha(alphamorse, "Q");
 // console.log(m2a);
 
-
-export function lettersOrMorseOnly(input) {
-    var regex = /[^a-z\s-.]/gi;
-    input.value = input.value.replace(regex, "")
-}
