@@ -1,4 +1,4 @@
-import { createTextBox } from "./dom.js";
+import { createTextBox, removeChild } from "./dom.js";
 
 const alphamorse = 
 {
@@ -45,9 +45,13 @@ const form = document.querySelector("form");
 const output = document.getElementById("output")
 
 
+
     
     form.addEventListener("submit", (e) => {
+    
     e.preventDefault()
+    const allOutputs = document.getElementsByClassName("output")
+    while (allOutputs.length >0) allOutputs[0].remove();  
     console.log("form submitted")
     const userInput = document.querySelector("#input")
     const userText = userInput.value.toUpperCase()
@@ -62,7 +66,7 @@ const output = document.getElementById("output")
     if (isAlphabetic) {
         console.log("Receiving text input")
         if(!userText || !userText.trim()) {
-            return createTextBox("div", "You've only entered spaces" + "", output, ["output"] 
+            return createTextBox("div", "You've only entered spaces, please use Morse or English" + "", output, ["output"] 
             ) 
         }
         const words = userText.split(" ");
@@ -86,7 +90,7 @@ const output = document.getElementById("output")
             presentString = presentString + convertedArray[i] + "    "
         }
         console.log(presentString)
-        createTextBox("div", " from English to morse is " + presentString, output, ["output"]) 
+        createTextBox("div", " From English to Morse is: " + presentString, output, ["output"]) 
     }
 
     if (!isAlphabetic) {
@@ -122,12 +126,13 @@ const output = document.getElementById("output")
              presentMorseString = presentMorseString + convertedMorseArray[i] + " "
          }
          console.log(presentMorseString)
-         createTextBox("div", " from morse to English is " + presentMorseString.toLowerCase(), output, ["output"])
+         createTextBox("div", " From Morse to English is: " + presentMorseString.toLowerCase(), output, ["output"])
   
     }
 
     // if (!isAlphabetic && !isMorse) {
     //     createTextBox("div", "Must use Morse or English letters" + "", output, ["output"])
+     form.reset();
     }
     
 
