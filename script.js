@@ -34,6 +34,8 @@ const myMorse = Object.values(alphamorse)
 
 import { getAlphFromMorse } from "./utils.js";
 import { getMorseFromAlpha } from "./utils.js";
+import { inputValidate } from "./utils.js";
+
 // import { IsANumError } from "./errors.js";
 
 
@@ -54,18 +56,16 @@ const output = document.getElementById("output")
 
 //here is where I figure out if its words or morse being input by user
     
-    let val = userText
-    console.log(val + " is this val")
-    let isAlphabetic = /^[a-zA-Z ]+$/.test(val);
-    console.log(isAlphabetic)
+    let isAlphabetic = inputValidate(userText)
+  
 
     if (isAlphabetic) {
         console.log("Receiving text input")
-        if(!val || !val.trim()) {
+        if(!userText || !userText.trim()) {
             return createTextBox("div", "You've only entered spaces" + "", output, ["output"] 
             ) 
         }
-        const words = val.split(" ");
+        const words = userText.split(" ");
         console.log("attempting split " + words + " this is now an Array")
         console.log(words)
 // now I have the array called words, I need to iterate over it, can't split coz array not string
