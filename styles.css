@@ -10,3 +10,9 @@ form {
     align-items: center;  
     gap:1em;
 }
+
+.output {
+    display:flex;
+    white-space: pre;
+    background-color: aquamarine;
+}
