@@ -76,7 +76,7 @@ const output = document.getElementById("output")
         for (let i = 0; i < letters.length; i++) {
            convertedArray[i] = [];
             for (let j = 0; j < letters[i].length; j++) {
-                convertedArray[i][j] = getMorseFromAlpha(alphamorse, letters[i][j])
+                convertedArray[i][j] = getMorseFromAlpha(letters[i][j])
             }
             convertedArray[i] = convertedArray[i].join(" ")
         }
@@ -96,7 +96,7 @@ const output = document.getElementById("output")
         let isMorse = /[\s\-\.]+/g.test(val);
         console.log(isMorse)
 
-        if (!isAlphabetic && !isMorse) {
+        if (!isMorse) {
             return createTextBox("div", "Must use Morse or English letters" + "", output, ["output"] 
             ) 
         }
@@ -112,7 +112,7 @@ const output = document.getElementById("output")
         for (let i = 0; i < morseLetters.length; i++) {
             convertedMorseArray[i] = [];
              for (let j = 0; j < morseLetters[i].length; j++) {
-                 convertedMorseArray[i][j] = getAlphFromMorse(alphamorse, morseLetters[i][j])
+                 convertedMorseArray[i][j] = getAlphFromMorse(morseLetters[i][j])
              }
              convertedMorseArray[i] = convertedMorseArray[i].join("")
          }
