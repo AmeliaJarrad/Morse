@@ -2,6 +2,9 @@ body {
     display:flex;
     flex-direction: column;
     align-items: center;
+    background-color: rgb(102, 151, 135);
+    font-family: "Goblin One", serif;
+    color:#1f1d1d
 }
 
 form {
@@ -9,10 +12,52 @@ form {
     flex-direction: column;
     align-items: center;  
     gap:1em;
+    border: 10px ridge rgb(122, 114, 67);
+    padding: 1em;
+    background-image: url(./assets/Rustic\ Wood_11.jpg);
 }
+
+button {
+    display: flex;
+    background-color: rgb(141, 137, 114);
+    border: 5px outset rgb(122, 114, 67);
+    width: 10em;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    font-family: "Rye", serif;
+}
+
+button:hover {background-color: rgb(148, 138, 82)}
+button:active {background-color: rgb(122, 114, 67); box-shadow: 0 4px #2b2a2a; border: 5px inset rgb(141, 137, 114);}
+
+input {
+    display: flex;
+    width:40em;
+    height: 25px;
+}
+
 
 .output {
     display:flex;
     white-space: pre;
-    background-color: aquamarine;
+    gap:1em;
+    border: 10px ridge rgb(122, 114, 67);
+    padding: 1em;
+    background-color: rgba(170, 235, 213, 0.404);
+    font-size: small;
+}
+
+.rye-regular {
+    font-family: "Rye", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.goblin-one-regular {
+    font-family: "Goblin One", serif;
+    font-weight: 400;
+    font-style: normal;
 }

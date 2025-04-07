@@ -5,3 +5,8 @@ export const createTextBox = (type, content, parent, classes = []) => {
     el.appendChild(text);
     parent.appendChild(el);  
 };
+
+export const removeChild = (parent, child) => {
+        parent.removeChild(child);
+
+} 

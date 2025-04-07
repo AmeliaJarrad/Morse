@@ -6,25 +6,29 @@
         <title>Document</title>
         <script type="module" src="script.js" defer></script>
         <link rel="stylesheet" href="./styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Goblin+One&family=Rye&display=swap" rel="stylesheet">
+
     </head>
     <body>
         <header> 
             <h1> Morse to English - Translator </h1>
             <div>
-                <h2> English to Morse</h2>
+                
                 <form>
                     <div>
-                        <label for="input">Type your text here</label>
-                        <input type="text" id="input" placeholder="enter words" required>
+                        <label for="input"></label>
+                        <input type="text" id="input" placeholder="Enter words or morse here" required>
                     </div>
                     <button>Translate</button>
                 </form>    
             </div>
-            <div>
-                <h2>Morse to English</h2>
-                <div id="output">
-                    <label for="output">Translation</label>
-                    <output class="output" type="text" id="output"></output>
+            <div id="outputHolder">
+                <h2>Translation</h2>
+                <div >
+                    <label for="output"></label>
+                    <output  type="text" id="output"></output>
                 </div>
               
             </div>
